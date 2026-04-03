@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ menuOpen: false }" class="scroll-smooth">
+<html lang="en" x-data="{ menuOpen: false, showModal: false, serviceType: '' }" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WorkShack – Where Research Meets Results</title>
+  <title>WorkShack – Digital Services West Bengal</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
   <style>
+    [x-cloak] { display: none !important; }
     body {
       font-family: 'Inter', sans-serif;
       background: #0f0f0f;
@@ -18,7 +19,6 @@
       overflow-x: hidden;
     }
 
-    /* Animated gradient background */
     .animated-bg {
       background: linear-gradient(-45deg, #111, #1a1a1a, #0d0d0d, #121212);
       background-size: 400% 400%;
@@ -31,25 +31,19 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Floating animation */
     @keyframes float {
-      0% { transform: translateY(0px); }
+      0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
     }
 
-    .floating {
-      animation: float 4s ease-in-out infinite;
-    }
+    .floating { animation: float 4s ease-in-out infinite; }
 
-    /* Glass effect */
     .glass {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* Scroll animation */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -61,7 +55,6 @@
       transform: translateY(0);
     }
 
-    /* Glow button */
     .glow-btn {
       background: linear-gradient(90deg,#2563eb,#9333ea);
       transition: 0.4s ease;
@@ -72,26 +65,24 @@
       box-shadow: 0 0 20px rgba(147,51,234,0.6);
     }
 
-    /* Card hover animation */
     .card-hover:hover {
-      transform: translateY(-10px) scale(1.02);
+      transform: translateY(-10px);
       transition: 0.4s ease;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      border-color: rgba(147,51,234,0.4);
     }
   </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
 <header class="fixed w-full z-50 bg-black/60 backdrop-blur-md border-b border-gray-800">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <h1 class="text-2xl font-bold text-blue-500">WorkShack</h1>
 
     <nav class="hidden md:flex space-x-8 text-sm font-semibold">
       <a href="#hero" class="hover:text-blue-400 transition">Home</a>
-      <a href="#about" class="hover:text-blue-400 transition">About</a>
       <a href="#services" class="hover:text-blue-400 transition">Services</a>
+      <a href="#about" class="hover:text-blue-400 transition">About</a>
       <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
     </nav>
 
@@ -100,164 +91,207 @@
     </button>
   </div>
 
-  <div x-show="menuOpen" class="md:hidden px-6 pb-4 space-y-2 bg-black">
-    <a href="#hero" class="block">Home</a>
-    <a href="#about" class="block">About</a>
-    <a href="#services" class="block">Services</a>
-    <a href="#contact" class="block">Contact</a>
+  <div x-show="menuOpen" x-cloak class="md:hidden px-6 pb-4 space-y-2 bg-black border-b border-gray-800">
+    <a href="#hero" class="block py-2">Home</a>
+    <a href="#services" class="block py-2">Services</a>
+    <a href="#about" class="block py-2">About</a>
+    <a href="#contact" class="block py-2">Contact</a>
   </div>
 </header>
 
-<!-- Hero -->
 <section id="hero" class="min-h-screen flex items-center justify-center text-center px-6 animated-bg relative overflow-hidden">
+  <div class="absolute w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[140px] floating top-[-100px] left-[-100px]"></div>
+  <div class="absolute w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] floating bottom-[-100px] right-[-100px]"></div>
 
-  <!-- Glow Orbs -->
-  <div class="absolute w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[140px] floating top-[-100px] left-[-100px]"></div>
-  <div class="absolute w-[400px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] floating bottom-[-100px] right-[-100px]"></div>
-
-  <!-- Floating Icons -->
-  <div class="absolute top-1/4 left-10 text-blue-500 text-3xl floating">
-    <i class="fas fa-chart-line"></i>
-  </div>
-
-  <div class="absolute bottom-1/4 right-16 text-purple-500 text-3xl floating">
-    <i class="fas fa-robot"></i>
-  </div>
-
-  <div class="absolute top-1/3 right-1/4 text-green-500 text-3xl floating">
-    <i class="fas fa-database"></i>
-  </div>
-
-  <!-- Content -->
   <div class="max-w-4xl reveal relative z-10">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-      Where Research Meets Results
+    <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm mb-4 block">Online Form Fill-up Center</span>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+      Digital Solutions for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">West Bengal</span>
     </h1>
-
-    <p class="text-lg text-gray-400 mb-8">
-      AI-powered automation, data science, and academic tech solutions crafted with care for students and professionals.
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+      Expert assistance for Lakshmir Bhandar, Caste Certificates, WBPSC, College Admissions, and all Cyber Cafe services at your fingertips.
     </p>
-
-    <a href="#services"
-       class="glow-btn text-white px-8 py-3 rounded-full font-semibold inline-block">
-      Explore Our Services
-    </a>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#services" class="glow-btn text-white px-8 py-4 rounded-full font-bold inline-block">View Services</a>
+      <a href="https://wa.me/916295458054" class="glass text-white px-8 py-4 rounded-full font-bold inline-block hover:bg-white/10 transition">Chat on WhatsApp</a>
+    </div>
   </div>
 </section>
 
-<!-- About -->
+<section id="services" class="py-24 px-6 bg-[#0a0a0a]">
+  <div class="text-center mb-16 reveal">
+    <h2 class="text-4xl font-bold mb-4">Our Expertise</h2>
+    <p class="text-gray-400">Quick, Accurate, and Secure Form Submission</p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+    <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-blue-500">
+      <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-landmark text-blue-500 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Govt. Schemes</h3>
+      <ul class="text-gray-400 text-sm space-y-3 mb-8">
+        <li><i class="fas fa-check text-blue-500 mr-2"></i> Lakshmir Bhandar</li>
+        <li><i class="fas fa-check text-blue-500 mr-2"></i> Swasthya Sathi Card</li>
+        <li><i class="fas fa-check text-blue-500 mr-2"></i> Caste Certificate</li>
+        <li><i class="fas fa-check text-blue-500 mr-2"></i> Kanyashree/Aikyashree</li>
+      </ul>
+      <button @click="showModal = true; serviceType = 'Government Schemes'" class="w-full py-3 bg-blue-600/10 border border-blue-500/50 rounded-xl hover:bg-blue-600 transition font-semibold">Apply Now</button>
+    </div>
+
+    <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-purple-500">
+      <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-user-graduate text-purple-500 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Education & Jobs</h3>
+      <ul class="text-gray-400 text-sm space-y-3 mb-8">
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> WBPSC / WBPRB Exams</li>
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> College Admissions</li>
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> WBJEE / JEXPO / ITI</li>
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> Employment Bank</li>
+      </ul>
+      <button @click="showModal = true; serviceType = 'Education & Exams'" class="w-full py-3 bg-purple-600/10 border border-purple-500/50 rounded-xl hover:bg-purple-600 transition font-semibold">Apply Now</button>
+    </div>
+
+    <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-green-500">
+      <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-id-card text-green-500 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Digital IDs</h3>
+      <ul class="text-gray-400 text-sm space-y-3 mb-8">
+        <li><i class="fas fa-check text-green-500 mr-2"></i> PAN Card (New/Corr.)</li>
+        <li><i class="fas fa-check text-green-500 mr-2"></i> Voter Card (NVSP)</li>
+        <li><i class="fas fa-check text-green-500 mr-2"></i> Digital Ration Card</li>
+        <li><i class="fas fa-check text-green-500 mr-2"></i> Passport Applications</li>
+      </ul>
+      <button @click="showModal = true; serviceType = 'Digital Identity Cards'" class="w-full py-3 bg-green-600/10 border border-green-500/50 rounded-xl hover:bg-green-600 transition font-semibold">Apply Now</button>
+    </div>
+
+    <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-yellow-500">
+      <div class="w-14 h-14 bg-yellow-500/20 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-file-invoice text-yellow-500 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Business & Land</h3>
+      <ul class="text-gray-400 text-sm space-y-3 mb-8">
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Banglarbhumi Records</li>
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Trade License</li>
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> GST/Udyam Reg.</li>
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> WBSEDCL Services</li>
+      </ul>
+      <button @click="showModal = true; serviceType = 'Business & Land Records'" class="w-full py-3 bg-yellow-600/10 border border-yellow-500/50 rounded-xl hover:bg-yellow-600 transition font-semibold">Apply Now</button>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
   <div class="grid md:grid-cols-2 gap-12 items-center reveal">
-    <img src="https://plus.unsplash.com/premium_photo-1661329859712-76d8a4500fdb?q=80&w=870"
-         class="rounded-xl shadow-2xl">
+    <div class="relative">
+        <div class="absolute inset-0 bg-blue-600/20 blur-3xl rounded-full"></div>
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=870" class="rounded-3xl shadow-2xl relative z-10 border border-gray-800">
+    </div>
 
     <div>
-      <h2 class="text-4xl font-bold mb-8">Why Choose WorkShack?</h2>
-      <div class="space-y-5 text-gray-400">
-        <div><i class="fas fa-clock text-blue-500 mr-3"></i> On-time delivery for every project</div>
-        <div><i class="fas fa-shield-alt text-green-500 mr-3"></i> 100% plagiarism & AI-free guarantee</div>
-        <div><i class="fas fa-rupee-sign text-purple-500 mr-3"></i> Affordable pricing for students</div>
-        <div><i class="fab fa-whatsapp text-green-500 mr-3"></i> Friendly support via WhatsApp</div>
+      <h2 class="text-4xl font-bold mb-8">Why WorkShack?</h2>
+      <p class="text-gray-400 mb-6">We bridge the gap between complex government portals and the citizens of West Bengal. Based locally, we understand the specific documentation requirements for every scheme.</p>
+      <div class="space-y-5 text-gray-300">
+        <div class="flex items-center"><i class="fas fa-bolt text-blue-500 w-8"></i> Instant WhatsApp Support</div>
+        <div class="flex items-center"><i class="fas fa-lock text-green-500 w-8"></i> Data Privacy Guaranteed</div>
+        <div class="flex items-center"><i class="fas fa-check-circle text-purple-500 w-8"></i> Error-Free Form Filling</div>
+        <div class="flex items-center"><i class="fas fa-wallet text-yellow-500 w-8"></i> Nominal Service Charges</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section id="services" class="py-24 px-6 bg-black">
-  <div class="text-center mb-16 reveal">
-    <h2 class="text-4xl font-bold">Services We Offer</h2>
-  </div>
-
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-
-    <div class="glass p-6 rounded-2xl card-hover reveal">
-      <i class="fas fa-chart-line text-blue-500 text-3xl mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
-      <p class="text-gray-400 text-sm">Leverage Python, Pandas, and statistics to extract deep insights.</p>
+<section id="contact" class="py-24 px-6 max-w-4xl mx-auto reveal text-center">
+  <h2 class="text-4xl font-bold mb-10">Get In Touch</h2>
+  <div class="glass p-10 rounded-3xl border border-gray-800">
+    <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+            <i class="fab fa-whatsapp text-green-500 text-3xl mb-3"></i>
+            <p class="font-bold">WhatsApp</p>
+            <p class="text-gray-400 text-sm">+91 6295458054</p>
+        </div>
+        <div>
+            <i class="fas fa-envelope text-blue-500 text-3xl mb-3"></i>
+            <p class="font-bold">Email</p>
+            <p class="text-gray-400 text-sm">workshackofficial@gmail.com</p>
+        </div>
+        <div>
+            <i class="fas fa-map-marker-alt text-red-500 text-3xl mb-3"></i>
+            <p class="font-bold">Location</p>
+            <p class="text-gray-400 text-sm">West Bengal, India</p>
+        </div>
     </div>
-
-    <div class="glass p-6 rounded-2xl card-hover reveal">
-      <i class="fas fa-chart-pie text-pink-500 text-3xl mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">Data Visualization</h3>
-      <p class="text-gray-400 text-sm">Interactive dashboards with Matplotlib, Plotly & Seaborn.</p>
-    </div>
-
-    <div class="glass p-6 rounded-2xl card-hover reveal">
-      <i class="fas fa-database text-purple-500 text-3xl mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">Data Warehousing</h3>
-      <p class="text-gray-400 text-sm">Build scalable architecture with SQL, PostgreSQL & BigQuery.</p>
-    </div>
-
-    <div class="glass p-6 rounded-2xl card-hover reveal">
-      <i class="fas fa-robot text-green-500 text-3xl mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">AI Automation</h3>
-      <p class="text-gray-400 text-sm">Automate tasks with Python, Selenium, and ML models.</p>
-    </div>
-
-    <div class="glass p-6 rounded-2xl card-hover reveal">
-      <i class="fas fa-comments text-yellow-500 text-3xl mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">Chatbot Development</h3>
-      <p class="text-gray-400 text-sm">Build Rasa/Dialogflow chatbots for smarter interactions.</p>
-    </div>
-
-    <div class="glass p-6 rounded-2xl card-hover reveal">
-      <i class="fas fa-book-open text-indigo-500 text-3xl mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">Academic Help</h3>
-      <p class="text-gray-400 text-sm">Assignments, reports, and documentation — plagiarism free.</p>
-    </div>
-
+    <a href="https://wa.me/916295458054" class="glow-btn text-white px-10 py-4 rounded-full font-bold inline-block">Start Your Application</a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="py-20 text-center reveal">
-  <h2 class="text-3xl font-bold mb-6">
-    Ready to elevate your research or automate your workflow?
-  </h2>
-
-  <a href="https://wa.me/916295458054" target="_blank"
-     class="glow-btn text-white px-8 py-3 rounded-full font-semibold inline-block">
-    Get In Touch via WhatsApp
-  </a>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="py-24 px-6 max-w-4xl mx-auto reveal">
-  <h2 class="text-4xl font-bold text-center mb-10">Contact Us</h2>
-
-  <div class="text-center text-gray-400 space-y-3 mb-10">
-    <p><i class="fas fa-phone-alt mr-2 text-blue-500"></i>+91 6295458054</p>
-    <p><i class="fas fa-envelope mr-2 text-blue-500"></i>workshackofficial@gmail.com</p>
-    <p><i class="fas fa-globe mr-2 text-blue-500"></i>workshack.onrender.com</p>
+<footer class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm">
+  <p class="mb-2">© 2025 WorkShack. Your Digital Partner in West Bengal.</p>
+  <div class="flex justify-center space-x-6 mt-4">
+    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+    <a href="#" class="hover:text-white transition">Terms of Service</a>
   </div>
-
-  <form class="grid gap-5">
-    <input type="text" placeholder="Your Name" class="bg-gray-900 p-3 rounded-md border border-gray-700">
-    <input type="email" placeholder="Your Email" class="bg-gray-900 p-3 rounded-md border border-gray-700">
-    <textarea rows="5" placeholder="Your Message" class="bg-gray-900 p-3 rounded-md border border-gray-700"></textarea>
-    <button class="glow-btn text-white py-3 rounded-md">Send Message</button>
-  </form>
-</section>
-
-<!-- Footer -->
-<footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
-  © 2025 WorkShack. All rights reserved.
 </footer>
 
-<!-- Scroll Reveal Script -->
+<div x-show="showModal" x-cloak class="fixed inset-0 z-[100] flex items-center justify-center px-4">
+  <div class="absolute inset-0 bg-black/90 backdrop-blur-md" @click="showModal = false"></div>
+  <div class="glass max-w-lg w-full p-8 rounded-3xl relative z-10 border border-gray-700 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <h3 class="text-2xl font-bold">Apply Now</h3>
+            <p class="text-blue-400 text-sm mt-1" x-text="'Service: ' + serviceType"></p>
+        </div>
+        <button @click="showModal = false" class="text-gray-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+    </div>
+    
+    <form class="space-y-4" onsubmit="handleFormSubmit(event)">
+      <input type="hidden" id="modalServiceType" :value="serviceType">
+      <div class="space-y-1">
+          <label class="text-xs text-gray-500 ml-1">Full Name</label>
+          <input type="text" required id="userName" placeholder="Enter your name" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none">
+      </div>
+      <div class="space-y-1">
+          <label class="text-xs text-gray-500 ml-1">WhatsApp Number</label>
+          <input type="tel" required id="userPhone" placeholder="10-digit number" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none">
+      </div>
+      <div class="space-y-1">
+          <label class="text-xs text-gray-500 ml-1">Details</label>
+          <textarea rows="3" id="userMsg" placeholder="Which document do you need help with?" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none"></textarea>
+      </div>
+      
+      <button type="submit" class="w-full glow-btn py-4 rounded-xl font-bold mt-4">Send Inquiry via WhatsApp</button>
+      <p class="text-[10px] text-center text-gray-500">We will contact you shortly after receiving your message.</p>
+    </form>
+  </div>
+</div>
+
 <script>
   function revealOnScroll() {
     document.querySelectorAll('.reveal').forEach(el => {
       const top = el.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (top < windowHeight - 100) {
+      if (top < window.innerHeight - 100) {
         el.classList.add('active');
       }
     });
   }
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
+
+  function handleFormSubmit(e) {
+      e.preventDefault();
+      const service = document.getElementById('modalServiceType').value;
+      const name = document.getElementById('userName').value;
+      const phone = document.getElementById('userPhone').value;
+      const msg = document.getElementById('userMsg').value;
+      
+      // WhatsApp API Link
+      const whatsappNumber = "916295458054";
+      const text = `Hello WorkShack! %0A%0A*New Service Inquiry*%0A*Service:* ${service}%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Details:* ${msg}`;
+      
+      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+  }
 </script>
 
 </body>
