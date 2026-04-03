@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WorkShack – Digital Services West Bengal</title>
+  <title>WorkShack – Digital & RTO Services West Bengal</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -104,16 +104,16 @@
   <div class="absolute w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] floating bottom-[-100px] right-[-100px]"></div>
 
   <div class="max-w-4xl reveal relative z-10">
-    <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm mb-4 block">Online Form Fill-up Center</span>
+    <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm mb-4 block">Form Fill-up & RTO Solutions</span>
     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-      Digital Solutions for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">West Bengal</span>
+      Digital Services for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">West Bengal</span>
     </h1>
     <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-      Expert assistance for Lakshmir Bhandar, Caste Certificates, WBPSC, College Admissions, and all Cyber Cafe services at your fingertips.
+      From Lakshmir Bhandar and WBPSC Exams to Car Insurance and Fitness renewals—we handle the paperwork while you save time.
     </p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="#services" class="glow-btn text-white px-8 py-4 rounded-full font-bold inline-block">View Services</a>
-      <a href="https://wa.me/916295458054" class="glass text-white px-8 py-4 rounded-full font-bold inline-block hover:bg-white/10 transition">Chat on WhatsApp</a>
+      <a href="#services" class="glow-btn text-white px-8 py-4 rounded-full font-bold inline-block">Explore Services</a>
+      <a href="https://wa.me/916291271662" class="glass text-white px-8 py-4 rounded-full font-bold inline-block hover:bg-white/10 transition">Chat on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -121,19 +121,20 @@
 <section id="services" class="py-24 px-6 bg-[#0a0a0a]">
   <div class="text-center mb-16 reveal">
     <h2 class="text-4xl font-bold mb-4">Our Expertise</h2>
-    <p class="text-gray-400">Quick, Accurate, and Secure Form Submission</p>
+    <p class="text-gray-400">Professional assistance for a digital-first Bengal</p>
   </div>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+    
     <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-blue-500">
       <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
         <i class="fas fa-landmark text-blue-500 text-2xl"></i>
       </div>
       <h3 class="text-xl font-bold mb-4">Govt. Schemes</h3>
       <ul class="text-gray-400 text-sm space-y-3 mb-8">
-        <li><i class="fas fa-check text-blue-500 mr-2"></i> Lakshmir Bhandar</li>
+        <li><i class="fas fa-check text-blue-500 mr-2"></i> Lakshmir Bhandar Enrollment</li>
         <li><i class="fas fa-check text-blue-500 mr-2"></i> Swasthya Sathi Card</li>
-        <li><i class="fas fa-check text-blue-500 mr-2"></i> Caste Certificate</li>
+        <li><i class="fas fa-check text-blue-500 mr-2"></i> Caste Certificate (SC/ST/OBC)</li>
         <li><i class="fas fa-check text-blue-500 mr-2"></i> Kanyashree/Aikyashree</li>
       </ul>
       <button @click="showModal = true; serviceType = 'Government Schemes'" class="w-full py-3 bg-blue-600/10 border border-blue-500/50 rounded-xl hover:bg-blue-600 transition font-semibold">Apply Now</button>
@@ -145,14 +146,30 @@
       </div>
       <h3 class="text-xl font-bold mb-4">Education & Jobs</h3>
       <ul class="text-gray-400 text-sm space-y-3 mb-8">
-        <li><i class="fas fa-check text-purple-500 mr-2"></i> WBPSC / WBPRB Exams</li>
-        <li><i class="fas fa-check text-purple-500 mr-2"></i> College Admissions</li>
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> WBPSC / WBPRB Exam Forms</li>
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> College/Univ Admissions</li>
         <li><i class="fas fa-check text-purple-500 mr-2"></i> WBJEE / JEXPO / ITI</li>
-        <li><i class="fas fa-check text-purple-500 mr-2"></i> Employment Bank</li>
+        <li><i class="fas fa-check text-purple-500 mr-2"></i> Employment Bank (Yuvashree)</li>
       </ul>
       <button @click="showModal = true; serviceType = 'Education & Exams'" class="w-full py-3 bg-purple-600/10 border border-purple-500/50 rounded-xl hover:bg-purple-600 transition font-semibold">Apply Now</button>
     </div>
 
+    <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-orange-500">
+      <div class="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center mb-6">
+        <i class="fas fa-car text-orange-500 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Vehicle & RTO</h3>
+      <ul class="text-gray-400 text-sm space-y-3 mb-8">
+        <li><i class="fas fa-check text-orange-500 mr-2"></i> Insurance (New/Renewal)</li>
+        <li><i class="fas fa-check text-orange-500 mr-2"></i> Fitness (CF) Renewal</li>
+        <li><i class="fas fa-check text-orange-500 mr-2"></i> Challan & Tax Payment</li>
+        <li><i class="fas fa-check text-orange-500 mr-2"></i> Other State Permits</li>
+      </ul>
+      <button @click="showModal = true; serviceType = 'Vehicle & RTO Services'" class="w-full py-3 bg-orange-600/10 border border-orange-500/50 rounded-xl hover:bg-orange-600 transition font-semibold">Get Quote</button>
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
     <div class="glass p-8 rounded-3xl card-hover reveal border-t-4 border-green-500">
       <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
         <i class="fas fa-id-card text-green-500 text-2xl"></i>
@@ -162,7 +179,6 @@
         <li><i class="fas fa-check text-green-500 mr-2"></i> PAN Card (New/Corr.)</li>
         <li><i class="fas fa-check text-green-500 mr-2"></i> Voter Card (NVSP)</li>
         <li><i class="fas fa-check text-green-500 mr-2"></i> Digital Ration Card</li>
-        <li><i class="fas fa-check text-green-500 mr-2"></i> Passport Applications</li>
       </ul>
       <button @click="showModal = true; serviceType = 'Digital Identity Cards'" class="w-full py-3 bg-green-600/10 border border-green-500/50 rounded-xl hover:bg-green-600 transition font-semibold">Apply Now</button>
     </div>
@@ -173,12 +189,11 @@
       </div>
       <h3 class="text-xl font-bold mb-4">Business & Land</h3>
       <ul class="text-gray-400 text-sm space-y-3 mb-8">
-        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Banglarbhumi Records</li>
-        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Trade License</li>
-        <li><i class="fas fa-check text-yellow-500 mr-2"></i> GST/Udyam Reg.</li>
-        <li><i class="fas fa-check text-yellow-500 mr-2"></i> WBSEDCL Services</li>
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Banglarbhumi (Land Records)</li>
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Trade License (Silpasathi)</li>
+        <li><i class="fas fa-check text-yellow-500 mr-2"></i> GST & Udyam Registration</li>
       </ul>
-      <button @click="showModal = true; serviceType = 'Business & Land Records'" class="w-full py-3 bg-yellow-600/10 border border-yellow-500/50 rounded-xl hover:bg-yellow-600 transition font-semibold">Apply Now</button>
+      <button @click="showModal = true; serviceType = 'Business & Land Records'" class="w-full py-3 bg-yellow-600/10 border border-yellow-500/50 rounded-xl hover:bg-yellow-600 transition font-semibold">Inquire Now</button>
     </div>
   </div>
 </section>
@@ -191,13 +206,13 @@
     </div>
 
     <div>
-      <h2 class="text-4xl font-bold mb-8">Why WorkShack?</h2>
-      <p class="text-gray-400 mb-6">We bridge the gap between complex government portals and the citizens of West Bengal. Based locally, we understand the specific documentation requirements for every scheme.</p>
+      <h2 class="text-4xl font-bold mb-8">The WorkShack Edge</h2>
+      <p class="text-gray-400 mb-6">We bridge the gap between complex government portals and the citizens of West Bengal. We specialize in fast-tracking applications while ensuring zero errors.</p>
       <div class="space-y-5 text-gray-300">
-        <div class="flex items-center"><i class="fas fa-bolt text-blue-500 w-8"></i> Instant WhatsApp Support</div>
-        <div class="flex items-center"><i class="fas fa-lock text-green-500 w-8"></i> Data Privacy Guaranteed</div>
-        <div class="flex items-center"><i class="fas fa-check-circle text-purple-500 w-8"></i> Error-Free Form Filling</div>
-        <div class="flex items-center"><i class="fas fa-wallet text-yellow-500 w-8"></i> Nominal Service Charges</div>
+        <div class="flex items-center"><i class="fas fa-bolt text-blue-500 w-8"></i> Real-time WhatsApp Updates</div>
+        <div class="flex items-center"><i class="fas fa-lock text-green-500 w-8"></i> Safe & Private Data Handling</div>
+        <div class="flex items-center"><i class="fas fa-car-side text-orange-500 w-8"></i> Dedicated RTO Support</div>
+        <div class="flex items-center"><i class="fas fa-rupee-sign text-yellow-500 w-8"></i> Lowest Service Charges</div>
       </div>
     </div>
   </div>
@@ -210,7 +225,7 @@
         <div>
             <i class="fab fa-whatsapp text-green-500 text-3xl mb-3"></i>
             <p class="font-bold">WhatsApp</p>
-            <p class="text-gray-400 text-sm">+91 6295458054</p>
+            <p class="text-gray-400 text-sm">+91 6291271662</p>
         </div>
         <div>
             <i class="fas fa-envelope text-blue-500 text-3xl mb-3"></i>
@@ -219,16 +234,16 @@
         </div>
         <div>
             <i class="fas fa-map-marker-alt text-red-500 text-3xl mb-3"></i>
-            <p class="font-bold">Location</p>
+            <p class="font-bold">Region</p>
             <p class="text-gray-400 text-sm">West Bengal, India</p>
         </div>
     </div>
-    <a href="https://wa.me/916295458054" class="glow-btn text-white px-10 py-4 rounded-full font-bold inline-block">Start Your Application</a>
+    <a href="https://wa.me/916291271662" class="glow-btn text-white px-10 py-4 rounded-full font-bold inline-block">Contact Now</a>
   </div>
 </section>
 
 <footer class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm">
-  <p class="mb-2">© 2025 WorkShack. Your Digital Partner in West Bengal.</p>
+  <p class="mb-2">© 2025 WorkShack. Your Digital Solutions Partner.</p>
   <div class="flex justify-center space-x-6 mt-4">
     <a href="#" class="hover:text-white transition">Privacy Policy</a>
     <a href="#" class="hover:text-white transition">Terms of Service</a>
@@ -240,8 +255,8 @@
   <div class="glass max-w-lg w-full p-8 rounded-3xl relative z-10 border border-gray-700 shadow-2xl">
     <div class="flex justify-between items-start mb-6">
         <div>
-            <h3 class="text-2xl font-bold">Apply Now</h3>
-            <p class="text-blue-400 text-sm mt-1" x-text="'Service: ' + serviceType"></p>
+            <h3 class="text-2xl font-bold">Request Service</h3>
+            <p class="text-blue-400 text-sm mt-1" x-text="'Selected: ' + serviceType"></p>
         </div>
         <button @click="showModal = false" class="text-gray-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
     </div>
@@ -250,19 +265,19 @@
       <input type="hidden" id="modalServiceType" :value="serviceType">
       <div class="space-y-1">
           <label class="text-xs text-gray-500 ml-1">Full Name</label>
-          <input type="text" required id="userName" placeholder="Enter your name" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none">
+          <input type="text" required id="userName" placeholder="Your name" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none">
       </div>
       <div class="space-y-1">
           <label class="text-xs text-gray-500 ml-1">WhatsApp Number</label>
-          <input type="tel" required id="userPhone" placeholder="10-digit number" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none">
+          <input type="tel" required id="userPhone" placeholder="Mobile number" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none">
       </div>
       <div class="space-y-1">
           <label class="text-xs text-gray-500 ml-1">Details</label>
-          <textarea rows="3" id="userMsg" placeholder="Which document do you need help with?" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none"></textarea>
+          <textarea rows="3" id="userMsg" placeholder="Describe your request (e.g., Renew Car Insurance for WB-XX...)" class="w-full bg-gray-900/50 p-3 rounded-xl border border-gray-700 text-white focus:border-blue-500 focus:outline-none"></textarea>
       </div>
       
-      <button type="submit" class="w-full glow-btn py-4 rounded-xl font-bold mt-4">Send Inquiry via WhatsApp</button>
-      <p class="text-[10px] text-center text-gray-500">We will contact you shortly after receiving your message.</p>
+      <button type="submit" class="w-full glow-btn py-4 rounded-xl font-bold mt-4">Submit via WhatsApp</button>
+      <p class="text-[10px] text-center text-gray-500 mt-2">Professional Digital Help | Secure Payments</p>
     </form>
   </div>
 </div>
@@ -286,9 +301,8 @@
       const phone = document.getElementById('userPhone').value;
       const msg = document.getElementById('userMsg').value;
       
-      // WhatsApp API Link
-      const whatsappNumber = "916295458054";
-      const text = `Hello WorkShack! %0A%0A*New Service Inquiry*%0A*Service:* ${service}%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Details:* ${msg}`;
+      const whatsappNumber = "916291271662";
+      const text = `Hello WorkShack! %0A%0A*New Inquiry Received*%0A*Category:* ${service}%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Message:* ${msg}`;
       
       window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
   }
